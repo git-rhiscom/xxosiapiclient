@@ -8,4 +8,6 @@ public interface ICargaInicialMaestroDeProductosDAO {
 
 	void generarExtraccionDesdeVistaXXOSI() throws PersistenceExceptionInventario;
 
+	
+	
 }

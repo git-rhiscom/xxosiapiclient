@@ -31,3 +31,4 @@ public void generarExtraccionDesdeVistaXXOSI() throws PersistenceExceptionInvent
 	}
 	
 }
+
