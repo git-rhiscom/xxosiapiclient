@@ -6,11 +6,12 @@ import org.hibernate.cfg.Configuration;
 public class HibernateUtil {
  
 	private static final SessionFactory sessionFactory = buildSessionFactory();
+	private static final SessionFactory sessionFactoryXXOSI = buildSessionFactoryXXOSI();
  
 	private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
-			return new Configuration().configure().buildSessionFactory();
+			return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 		} catch (Throwable ex) {
 			// Make sure you log the exception, as it might be swallowed
 			System.err.println("Initial SessionFactory creation failed." + ex);
@@ -18,8 +19,23 @@ public class HibernateUtil {
 		}
 	}
  
+	private static SessionFactory buildSessionFactoryXXOSI() {
+		try {
+			// Create the SessionFactory from hibernateXXOSI.cfg.xml
+			return new Configuration().configure("hibernateXXOSI.cfg.xml").buildSessionFactory();
+		} catch (Throwable ex) {
+			// Make sure you log the exception, as it might be swallowed
+			System.err.println("Initial SessionFactory creation failed." + ex);
+			throw new ExceptionInInitializerError(ex);
+		}
+	}
+
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
+	}
+	
+	public static SessionFactory getSessionFactoryXXOSI() {
+		return sessionFactoryXXOSI;
 	}
  
 	public static void shutdown() {
