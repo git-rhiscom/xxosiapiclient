@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.rhiscom.persistence.inventario.entity.ConversionUnidadMedida" table="HIB_CONV_UNI_MED">
+        <id name="idConversion" type="int">
+            <column name="ID_CONVERSION" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreUnidadMedida" type="string">
+            <column name="NOMBRE_UNIDAD_MEDIDA" length="50" not-null="false" />
+        </property>
+        <property name="cantidadUnidades" type="int">
+            <column name="CANTIDAD_UNIDADES" precision="10" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

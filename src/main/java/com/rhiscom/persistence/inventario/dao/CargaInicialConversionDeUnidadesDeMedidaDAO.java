@@ -18,13 +18,15 @@ public void generarExtraccionDesdeVistaXXOSI() throws PersistenceExceptionInvent
 		session.beginTransaction();
 		ConversionUnidadMedida unidadMedida = new ConversionUnidadMedida();
  
-		unidadMedida.setIdConversion(5);
+		unidadMedida.setIdConversion(4);
 		unidadMedida.setNombreUnidadMedida("superman");
 		unidadMedida.setCantidadUnidades(20);
 
  
 		session.save(unidadMedida);
 		session.getTransaction().commit();
+		
+		HibernateUtil.getSessionFactory().close();
 		
 	}
 	
