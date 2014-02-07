@@ -4,6 +4,7 @@ import com.rhiscom.persistence.inventario.common.PersistenceExceptionInventario;
 
 public interface ICargaInicialMaestroDeProductosService {
 
-	void generarExtraccionMaestroDeProductos() throws PersistenceExceptionInventario;
+	void generarExtraccionMaestroDeProductos()
+			throws PersistenceExceptionInventario;
 
 }
