@@ -31,6 +31,7 @@
 
         <mapping resource="ConversionUnidadMedidaXXOSI.hbm.xml"/>
 
+
           
     </session-factory>
 </hibernate-configuration>
