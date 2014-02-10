@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.rhiscom.persistence.inventario.entity.ConversionUnidadMedidaXXOSI" table="XXOSI">
+    <class name="com.rhiscom.persistence.inventario.entity.xxosi.ConversionUnidadMedidaXXOSI" table="XXOSI">
         <id name="idConversion" type="int">
             <column name="ID" precision="10" scale="0" />
             <generator class="assigned" />

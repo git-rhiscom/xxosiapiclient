@@ -1,4 +1,4 @@
-package com.rhiscom.persistence.inventario.entity;
+package com.rhiscom.persistence.inventario.entity.xxosi;
 
 public class ConversionUnidadMedidaXXOSI implements java.io.Serializable {
 	

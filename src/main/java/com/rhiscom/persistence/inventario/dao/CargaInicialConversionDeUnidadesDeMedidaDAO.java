@@ -18,7 +18,7 @@ public void generarExtraccionDesdeVistaXXOSI() throws PersistenceExceptionInvent
 		session.beginTransaction();
 		ConversionUnidadMedida unidadMedida = new ConversionUnidadMedida();
  
-		unidadMedida.setIdConversion(4);
+		unidadMedida.setIdConversion(999);
 		unidadMedida.setNombreUnidadMedida("superman");
 		unidadMedida.setCantidadUnidades(20);
 

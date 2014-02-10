@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI" table="MAESTRO_PRODUCTOS_XXOSI">
+        <id name="itemId" type="string">
+            <column name="IT_ID" length="20" not-null="true" />
+            <generator class="assigned" />
+        </id>
+        <property name="itemName" type="string">
+            <column name="IT_NA" length="20" not-null="false" />
+        </property>
+        <property name="itemDescription" type="string">
+            <column name="IT_DE" length="255" not-null="false" />
+        </property>
+        <property name="alternativeItemId1" type="string">
+            <column name="AL_IT_ID1" length="255" not-null="false" />
+        </property>
+        <property name="alternativeItemId2" type="string">
+            <column name="AL_IT_ID2" length="255" not-null="false" />
+        </property>
+        <property name="alternativeItemId3" type="string">
+            <column name="AL_IT_ID3" length="255" not-null="false" />
+        </property>
+        <property name="alternativeItemId4" type="string">
+            <column name="AL_IT_ID4" length="255" not-null="false" />
+        </property>
+        <property name="priceEntryRequiredFlag" type="string">
+            <column name="PR_EN_RE" length="2000" not-null="false" />
+        </property>
+        <property name="discountableFlag" type="string">
+            <column name="DI_FL" length="2000" not-null="false" />
+        </property>
+        <property name="promotionableFlag" type="string">
+            <column name="PR_FL" length="2000" not-null="false" />
+        </property>
+        <property name="authorizedForSaleFlag" type="string">
+            <column name="AU_SA_FL" length="2000" not-null="false" />
+        </property>
+        <property name="consignationFlag" type="string">
+            <column name="CO_FL" length="2000" not-null="false" />
+        </property>
+        <property name="taxExemptCode" type="string">
+            <column name="TA_EX_CO" length="2000" not-null="false" />
+        </property>
+        <property name="weightOrUnitCountCode" type="string">
+            <column name="WE_UN_CO" length="2000" not-null="false" />
+        </property>
+        <property name="unitOfMeasureCode" type="string">
+            <column name="UN_ME_CO" length="2000" not-null="false" />
+        </property>
+        <property name="estado" type="char">
+            <column name="ESTADO" length="1" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,14 +1,23 @@
 package com.rhiscom.persistence.inventario.dao;
 
+
 import com.rhiscom.persistence.inventario.common.OracleConnectionException;
 import com.rhiscom.persistence.inventario.common.PersistenceExceptionInventario;
 import com.rhiscom.persistence.inventario.dao.ICargaInicialMaestroDeProductosDAO;
+import com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI;
+import com.rhiscom.persistence.inventario.util.HibernateUtil;
 import com.rhiscom.persistence.inventario.util.OracleConnection;
 import com.rhiscom.persistence.inventario.util.OracleConnectionInfo;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
 
 //import org.apache.log4j.Logger;
 
@@ -57,5 +66,52 @@ public class CargaInicialMaestroDeProductosDAO implements ICargaInicialMaestroDe
 		}
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductoXXOSI> leerProductosXXOSI() throws PersistenceExceptionInventario {
 
+		// Default data source connection parameters.
+		List<ProductoXXOSI> list = new ArrayList<ProductoXXOSI>();
+		Session session = HibernateUtil.getSessionFactoryXXOSI().openSession();
+		
+		//FAIL 1: Usando Criteria
+			/*
+			Criteria criteria = session.createCriteria(ProductoXXOSI.class);
+			List<ProductoXXOSI> listaProductosNuevos = criteria.list();
+			*/
+		
+		//FAIL 2: Usando HQL
+			/*
+			Query query = session.createQuery("from ProductoXXOSI");
+			list = query.list();
+			*/
+		
+		//FAIL 3: Usando SQL simp
+		
+		list = (List<ProductoXXOSI>)session.createQuery("select v from ProductoXXOSI v").list();
+		
+		
+		
+		return list;
+
+	}
+	
+	@Override
+	public void crearProductoFarmasanitas() throws PersistenceExceptionInventario {
+
+		// Default data source connection parameters.
+		
+
+	}
+	
+	@Override
+	public void actualizarProductosXXOSI() throws PersistenceExceptionInventario {
+
+		// Default data source connection parameters.
+		
+
+	}
+	
 }
+

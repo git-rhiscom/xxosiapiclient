@@ -30,6 +30,7 @@
         <property name="hbm2ddl.auto">validate</property>
 
         <mapping resource="ConversionUnidadMedidaXXOSI.hbm.xml"/>
+        <mapping resource="ProductoXXOSI.hbm.xml"/>
 
 
           
