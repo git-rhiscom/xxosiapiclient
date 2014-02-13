@@ -1,6 +1,5 @@
 package com.rhiscom.persistence.inventario.entity;
 
-import java.sql.Timestamp;
 
 public class Producto implements java.io.Serializable {
 	
@@ -22,16 +21,12 @@ public class Producto implements java.io.Serializable {
 	private String taxExemptCode;
 	private String weightOrUnitCountCode;
 	private String unitOfMeasureCode;
-	private Timestamp lastUpdatedStamp;
-	private Timestamp lastUpdatedTxStamp;
-	private Timestamp createStamp;
-	private Timestamp createTxStamp;
 	
 	public Producto(){
 		
 	}
 	
-	public Producto(String itemId, String itemName, String itemDescription, String alternativeItemId1, String alternativeItemId2, String alternativeItemId3, String alternativeItemId4, Boolean priceEntryRequiredFlag, Boolean discountableFlag, Boolean promotionableFlag, Boolean authorizedForSaleFlag, Boolean consignationFlag, String taxExemptCode, String weightOrUnitCountCode, String unitOfMeasureCode, Timestamp lastUpdatedStamp, Timestamp lastUpdatedTxStamp, Timestamp createStamp, Timestamp createTxStamp){
+	public Producto(String itemId, String itemName, String itemDescription, String alternativeItemId1, String alternativeItemId2, String alternativeItemId3, String alternativeItemId4, Boolean priceEntryRequiredFlag, Boolean discountableFlag, Boolean promotionableFlag, Boolean authorizedForSaleFlag, Boolean consignationFlag, String taxExemptCode, String weightOrUnitCountCode, String unitOfMeasureCode){
 		this.itemId=itemId;
 		this.itemName=itemName;
 		this.itemDescription=itemDescription;
@@ -47,10 +42,6 @@ public class Producto implements java.io.Serializable {
 		this.taxExemptCode=taxExemptCode;
 		this.weightOrUnitCountCode=weightOrUnitCountCode;
 		this.unitOfMeasureCode=unitOfMeasureCode;
-		this.lastUpdatedStamp=lastUpdatedStamp;
-		this.lastUpdatedTxStamp=lastUpdatedTxStamp;
-		this.createStamp=createStamp;
-		this.createTxStamp=createTxStamp;
 	}
 
 	public String getItemId() {
@@ -171,38 +162,6 @@ public class Producto implements java.io.Serializable {
 
 	public void setUnitOfMeasureCode(String unitOfMeasureCode) {
 		this.unitOfMeasureCode = unitOfMeasureCode;
-	}
-
-	public Timestamp getLastUpdatedStamp() {
-		return lastUpdatedStamp;
-	}
-
-	public void setLastUpdatedStamp(Timestamp lastUpdatedStamp) {
-		this.lastUpdatedStamp = lastUpdatedStamp;
-	}
-
-	public Timestamp getLastUpdatedTxStamp() {
-		return lastUpdatedTxStamp;
-	}
-
-	public void setLastUpdatedTxStamp(Timestamp lastUpdatedTxStamp) {
-		this.lastUpdatedTxStamp = lastUpdatedTxStamp;
-	}
-
-	public Timestamp getCreateStamp() {
-		return createStamp;
-	}
-
-	public void setCreateStamp(Timestamp createStamp) {
-		this.createStamp = createStamp;
-	}
-
-	public Timestamp getCreateTxStamp() {
-		return createTxStamp;
-	}
-
-	public void setCreateTxStamp(Timestamp createTxStamp) {
-		this.createTxStamp = createTxStamp;
 	}
 
 }

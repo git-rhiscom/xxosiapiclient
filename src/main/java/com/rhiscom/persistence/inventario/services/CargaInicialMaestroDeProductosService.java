@@ -23,9 +23,17 @@ public class CargaInicialMaestroDeProductosService implements
 	public List<ProductoXXOSI>  generarExtraccionMaestroDeProductosHibernate() throws PersistenceExceptionInventario {
 		ICargaInicialMaestroDeProductosDAO cargaInicialMaestroDeProductosDAO = XXOSIFactoryDAO.getInstance().getCargaInicialMaestroDeProductosDAO();
 		List<ProductoXXOSI> listadoProductosNuevos = new ArrayList<ProductoXXOSI>();
-		
-		
+				
 		listadoProductosNuevos = cargaInicialMaestroDeProductosDAO.leerProductosXXOSI();
+		
+		//cargaInicialMaestroDeProductosDAO.crearProductos(listadoProductosNuevos);
+				
+		//cargaInicialMaestroDeProductosDAO.actualizarEstadoProductosXXOSI(listadoProductosNuevos);
+		
+		//cargaInicialMaestroDeProductosDAO.actualizarProductos(listadoProductosNuevos);
+		
+		listadoProductosNuevos = cargaInicialMaestroDeProductosDAO.validadorDeExistentes(listadoProductosNuevos);
+
 		return listadoProductosNuevos;
 	}
 

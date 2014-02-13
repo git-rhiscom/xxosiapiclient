@@ -49,17 +49,5 @@
         <property name="unitOfMeasureCode" type="string">
             <column name="UN_ME_CO" length="2000" not-null="false" />
         </property>
-        <property name="lastUpdatedStamp" update="false" insert="false" generated="always">
-        	<column name="LAST_UPDATED_STAMP" scale="6" not-null="false" />
-        </property>
-        <property name="lastUpdatedTxStamp" update="false" insert="false" generated="always">
-        	<column name="LAST_UPDATED_TX_STAMP" scale="6" not-null="false" />
-        </property>
-        <property name="createdStamp" update="false" insert="false" generated="insert">
-        	<column name="CREATED_STAMP" scale="6" not-null="false" />
-        </property>
-        <property name="createdTxStamp" update="false" insert="false" generated="insert">
-        	<column name="CREATED_TX_STAMP" scale="6" not-null="false" />
-        </property>
     </class>
 </hibernate-mapping>
