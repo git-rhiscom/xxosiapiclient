@@ -8,9 +8,9 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="connection.url">jdbc:oracle:thin:@128.1.175.138:1521:XE</property>
-        <property name="connection.default_schema">FARMAPARDO</property>
-        <property name="connection.username">FARMAPARDO</property>
-        <property name="connection.password">FARMAPARDO</property>
+        <property name="connection.default_schema">FARMASANITASFR</property>
+        <property name="connection.username">FARMASANITASFR</property>
+        <property name="connection.password">FARMASANITASFR</property>
          
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>

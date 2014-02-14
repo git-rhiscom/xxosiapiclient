@@ -6,6 +6,10 @@ public class Producto implements java.io.Serializable {
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	private String itemId;
 	private String itemName;
 	private String itemDescription;
@@ -13,11 +17,11 @@ public class Producto implements java.io.Serializable {
 	private String alternativeItemId2;
 	private String alternativeItemId3;
 	private String alternativeItemId4;
-	private Boolean priceEntryRequiredFlag;
-	private Boolean discountableFlag;
-	private Boolean promotionableFlag;
-	private Boolean authorizedForSaleFlag;
-	private Boolean consignationFlag;
+	private String priceEntryRequiredFlag;
+	private String discountableFlag;
+	private String promotionableFlag;
+	private String authorizedForSaleFlag;
+	private String consignationFlag;
 	private String taxExemptCode;
 	private String weightOrUnitCountCode;
 	private String unitOfMeasureCode;
@@ -26,7 +30,7 @@ public class Producto implements java.io.Serializable {
 		
 	}
 	
-	public Producto(String itemId, String itemName, String itemDescription, String alternativeItemId1, String alternativeItemId2, String alternativeItemId3, String alternativeItemId4, Boolean priceEntryRequiredFlag, Boolean discountableFlag, Boolean promotionableFlag, Boolean authorizedForSaleFlag, Boolean consignationFlag, String taxExemptCode, String weightOrUnitCountCode, String unitOfMeasureCode){
+	public Producto(String itemId, String itemName, String itemDescription, String alternativeItemId1, String alternativeItemId2, String alternativeItemId3, String alternativeItemId4, String priceEntryRequiredFlag, String discountableFlag, String promotionableFlag, String authorizedForSaleFlag, String consignationFlag, String taxExemptCode, String weightOrUnitCountCode, String unitOfMeasureCode){
 		this.itemId=itemId;
 		this.itemName=itemName;
 		this.itemDescription=itemDescription;
@@ -100,43 +104,43 @@ public class Producto implements java.io.Serializable {
 		this.alternativeItemId4 = alternativeItemId4;
 	}
 
-	public Boolean getPriceEntryRequiredFlag() {
+	public String getPriceEntryRequiredFlag() {
 		return priceEntryRequiredFlag;
 	}
 
-	public void setPriceEntryRequiredFlag(Boolean priceEntryRequiredFlag) {
+	public void setPriceEntryRequiredFlag(String priceEntryRequiredFlag) {
 		this.priceEntryRequiredFlag = priceEntryRequiredFlag;
 	}
 
-	public Boolean getDiscountableFlag() {
+	public String getDiscountableFlag() {
 		return discountableFlag;
 	}
 
-	public void setDiscountableFlag(Boolean discountableFlag) {
+	public void setDiscountableFlag(String discountableFlag) {
 		this.discountableFlag = discountableFlag;
 	}
 
-	public Boolean getPromotionableFlag() {
+	public String getPromotionableFlag() {
 		return promotionableFlag;
 	}
 
-	public void setPromotionableFlag(Boolean promotionableFlag) {
+	public void setPromotionableFlag(String promotionableFlag) {
 		this.promotionableFlag = promotionableFlag;
 	}
 
-	public Boolean getAuthorizedForSaleFlag() {
+	public String getAuthorizedForSaleFlag() {
 		return authorizedForSaleFlag;
 	}
 
-	public void setAuthorizedForSaleFlag(Boolean authorizedForSaleFlag) {
+	public void setAuthorizedForSaleFlag(String authorizedForSaleFlag) {
 		this.authorizedForSaleFlag = authorizedForSaleFlag;
 	}
 
-	public Boolean getConsignationFlag() {
+	public String getConsignationFlag() {
 		return consignationFlag;
 	}
 
-	public void setConsignationFlag(Boolean consignationFlag) {
+	public void setConsignationFlag(String consignationFlag) {
 		this.consignationFlag = consignationFlag;
 	}
 

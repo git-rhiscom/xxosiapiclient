@@ -6,11 +6,11 @@ import com.rhiscom.persistence.inventario.common.PersistenceExceptionInventario;
 import com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI;
 
 public interface ICargaInicialMaestroDeProductosService {
-
+/*
 	void generarExtraccionMaestroDeProductos()
 			throws PersistenceExceptionInventario;
-
-	List<ProductoXXOSI> generarExtraccionMaestroDeProductosHibernate()
+*/
+	List<ProductoXXOSI> generarExtraccionMaestroDeProductos()
 			throws PersistenceExceptionInventario;
 
 }

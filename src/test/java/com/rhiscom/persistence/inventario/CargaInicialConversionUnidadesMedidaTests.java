@@ -36,7 +36,7 @@ public class CargaInicialConversionUnidadesMedidaTests {
 	public void getConnectionTest() {
 
 	}
-
+	/*
 	@Test
 	public void generarCargaInicialMaestroDeProductosJODBC() {
 		ICargaInicialMaestroDeProductosService service = ServicesXXOSIFactory
@@ -48,15 +48,15 @@ public class CargaInicialConversionUnidadesMedidaTests {
 			Assert.fail();
 			e.printStackTrace();
 		}
-
-	}
 	
+	}
+	*/
 	@Test
 	public void generarCargaInicialMaestroDeProductosHibernate() {
 		ICargaInicialMaestroDeProductosService service = ServicesXXOSIFactory
 				.getInstace().getCargaIinicialMaestroDeProductos();
 		try {
-			List<ProductoXXOSI> list =service.generarExtraccionMaestroDeProductosHibernate();
+			List<ProductoXXOSI> list =service.generarExtraccionMaestroDeProductos();
 			Assert.assertNotNull(list);
 			Assert.assertTrue(list.size()>0);
 			
