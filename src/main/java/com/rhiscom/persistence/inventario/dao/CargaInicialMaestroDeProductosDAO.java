@@ -18,9 +18,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.hibernate.CacheMode;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.transform.Transformers;
+import org.hibernate.type.StandardBasicTypes;
 
 //import org.apache.log4j.Logger;
 
@@ -90,15 +93,28 @@ public class CargaInicialMaestroDeProductosDAO implements
 		/*
 		 * Query query = session.createQuery("from ProductoXXOSI"); list =
 		 * query.list();
-		 */
+		 *///
 
 		// FAIL 3: Usando SQL simp
 
-		listadoProductosNuevos = (List<ProductoXXOSI>) session.createQuery(
-				"select v from ProductoXXOSI v where estado = 'N'").list();
+//		listadoProductosNuevos = (List<ProductoXXOSI>) session.createQuery(
+				//"select v from ProductoXXOSI v").setMaxResults(10).list();
+		try {
+		
+		List<ProductoXXOSI> result= session.createSQLQuery("SELECT ITEM_NUMBER as itemId, ITEM_DESCRIPTION as itemDescription, BAR_CODE as alternativeItemId1 FROM APPS.XXOSI_EBS_BOPOS_ITEMS")
+				.addScalar("itemId",StandardBasicTypes.STRING  )
+				.addScalar("itemDescription",StandardBasicTypes.STRING  )
+				.addScalar("alternativeItemId1",StandardBasicTypes.STRING  )
+				.setResultTransformer(Transformers.aliasToBean(ProductoXXOSI.class))
+				.setCacheMode(CacheMode.GET)
+				.list();
 
+				listadoProductosNuevos = result;
 		// HibernateUtil.getSessionFactoryXXOSI().close();
-
+		}
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
 		session.close();
 		return listadoProductosNuevos;
 

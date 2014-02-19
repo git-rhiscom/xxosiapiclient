@@ -1,8 +1,7 @@
 package com.rhiscom.persistence.inventario.entity;
 
-
 public class Producto implements java.io.Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -13,7 +12,7 @@ public class Producto implements java.io.Serializable {
 	private String itemId;
 	private String itemName;
 	private String itemDescription;
-	private String alternativeItemId1;	
+	private String alternativeItemId1;
 	private String alternativeItemId2;
 	private String alternativeItemId3;
 	private String alternativeItemId4;
@@ -25,27 +24,33 @@ public class Producto implements java.io.Serializable {
 	private String taxExemptCode;
 	private String weightOrUnitCountCode;
 	private String unitOfMeasureCode;
-	
-	public Producto(){
-		
+
+	public Producto() {
+
 	}
-	
-	public Producto(String itemId, String itemName, String itemDescription, String alternativeItemId1, String alternativeItemId2, String alternativeItemId3, String alternativeItemId4, String priceEntryRequiredFlag, String discountableFlag, String promotionableFlag, String authorizedForSaleFlag, String consignationFlag, String taxExemptCode, String weightOrUnitCountCode, String unitOfMeasureCode){
-		this.itemId=itemId;
-		this.itemName=itemName;
-		this.itemDescription=itemDescription;
-		this.alternativeItemId1=alternativeItemId1;
-		this.alternativeItemId2=alternativeItemId2;
-		this.alternativeItemId3=alternativeItemId3;
-		this.alternativeItemId4=alternativeItemId4;
-		this.priceEntryRequiredFlag=priceEntryRequiredFlag;
-		this.discountableFlag=discountableFlag;
-		this.promotionableFlag=promotionableFlag;
-		this.authorizedForSaleFlag=authorizedForSaleFlag;
-		this.consignationFlag=consignationFlag;
-		this.taxExemptCode=taxExemptCode;
-		this.weightOrUnitCountCode=weightOrUnitCountCode;
-		this.unitOfMeasureCode=unitOfMeasureCode;
+
+	public Producto(String itemId, String itemName, String itemDescription,
+			String alternativeItemId1, String alternativeItemId2,
+			String alternativeItemId3, String alternativeItemId4,
+			String priceEntryRequiredFlag, String discountableFlag,
+			String promotionableFlag, String authorizedForSaleFlag,
+			String consignationFlag, String taxExemptCode,
+			String weightOrUnitCountCode, String unitOfMeasureCode) {
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.itemDescription = itemDescription;
+		this.alternativeItemId1 = alternativeItemId1;
+		this.alternativeItemId2 = alternativeItemId2;
+		this.alternativeItemId3 = alternativeItemId3;
+		this.alternativeItemId4 = alternativeItemId4;
+		this.priceEntryRequiredFlag = priceEntryRequiredFlag;
+		this.discountableFlag = discountableFlag;
+		this.promotionableFlag = promotionableFlag;
+		this.authorizedForSaleFlag = authorizedForSaleFlag;
+		this.consignationFlag = consignationFlag;
+		this.taxExemptCode = taxExemptCode;
+		this.weightOrUnitCountCode = weightOrUnitCountCode;
+		this.unitOfMeasureCode = unitOfMeasureCode;
 	}
 
 	public String getItemId() {
@@ -71,7 +76,7 @@ public class Producto implements java.io.Serializable {
 	public void setItemDescription(String itemDescription) {
 		this.itemDescription = itemDescription;
 	}
-	
+
 	public String getAlternativeItemId1() {
 		return alternativeItemId1;
 	}
