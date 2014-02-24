@@ -10,7 +10,7 @@ public interface ICargaInicialMaestroDeProductosService {
 	void generarExtraccionMaestroDeProductos()
 			throws PersistenceExceptionInventario;
 */
-	List<ProductoXXOSI> generarExtraccionMaestroDeProductos()
+	List<ProductoXXOSI> generarExtraccionMaestroDeProductos(String url, String schema, String username, String password)
 			throws PersistenceExceptionInventario;
 
 }

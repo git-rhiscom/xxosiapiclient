@@ -56,7 +56,7 @@ public class CargaInicialConversionUnidadesMedidaTests {
 		ICargaInicialMaestroDeProductosService service = ServicesXXOSIFactory
 				.getInstace().getCargaIinicialMaestroDeProductos();
 		try {
-			List<ProductoXXOSI> list =service.generarExtraccionMaestroDeProductos();
+			List<ProductoXXOSI> list =service.generarExtraccionMaestroDeProductos("jdbc:oracle:thin:@128.1.175.138:1521:XE","FARMAPARDO","FARMAPARDO","FARMAPARDO");
 			Assert.assertNotNull(list);
 			Assert.assertTrue(list.size()>0);
 			

@@ -29,8 +29,8 @@
          
         <property name="hbm2ddl.auto">validate</property>
   
-        <mapping resource="ConversionUnidadMedida.hbm.xml"/>
-        <mapping resource="Producto.hbm.xml"/>
+        <!-- <mapping resource="ConversionUnidadMedida.hbm.xml"/> -->
+        <!-- <mapping resource="Producto.hbm.xml"/> -->
          
           
     </session-factory>

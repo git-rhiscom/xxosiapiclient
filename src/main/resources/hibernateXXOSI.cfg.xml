@@ -7,8 +7,8 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="connection.url">jdbc:oracle:thin:@12172.22.150.2:1526:DEV240</property>
-        <!-- <property name="connection.default_schema">FARMAPARDO</property> -->
+        <property name="connection.url">jdbc:oracle:thin:@172.22.150.2:1526:DEV240</property>
+        <property name="connection.default_schema">APPS</property>
         <property name="connection.username">EBSRV</property>
         <property name="connection.password">3Bsr4V</property>
          
@@ -29,7 +29,7 @@
          
         <property name="hbm2ddl.auto">validate</property>
 
-        <mapping resource="ConversionUnidadMedidaXXOSI.hbm.xml"/>
+        <!-- <mapping resource="ConversionUnidadMedidaXXOSI.hbm.xml"/> -->
         <mapping resource="ProductoXXOSI.hbm.xml"/>
 
 

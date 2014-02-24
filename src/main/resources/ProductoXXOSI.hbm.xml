@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI" table="APPS.XXOSI_EBS_BOPOS_ITEMS">
+    <class name="com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI" table="XXOSI_EBS_BOPOS_ITEMS">
         <id name="itemId" type="string">
             <column name="ITEM_NUMBER" length="40" not-null="true" />
             <generator class="assigned" />

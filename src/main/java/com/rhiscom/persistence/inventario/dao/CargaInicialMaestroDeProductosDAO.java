@@ -30,78 +30,33 @@ import org.hibernate.type.StandardBasicTypes;
 public class CargaInicialMaestroDeProductosDAO implements
 		ICargaInicialMaestroDeProductosDAO {
 
-	@Override
-	public void generarExtraccionDesdeVistaXXOSI()
-			throws PersistenceExceptionInventario {
-		// TODO Codigo feo de Freddy
-
-		// Default data source connection parameters.
-		String URL = "jdbc:oracle:thin:@128.1.175.138:1521:XE";
-		String USER = "FARMASANITASFR";
-		String PASS = "FARMASANITASFR";
-
-		/**
-		 * @param args
-		 */
-
-		// logger.info("Initializing Oracle JDBC Test application ...");
-		OracleConnectionInfo oConnInfo = new OracleConnectionInfo(URL, USER,
-				PASS);
-		OracleConnection oConn = OracleConnection.getInstance();
-
-		// Gets connection to data model.
-		Connection conn = null;
-		try {
-			conn = oConn.getConnection(oConnInfo);
-		} catch (OracleConnectionException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		String ENTITY_NAME = "IN_MA_PR";
-
-		try {
-			Statement statement = conn.createStatement();
-			statement.executeQuery("INSERT INTO " + ENTITY_NAME
-					+ " (IT_ID,IT_NA) VALUES ('111111113','FLAPA Treh')");
-
-			// Close the connection resources.
-			statement.close();
-
-		} catch (SQLException e) {
-			// logger.error("Problems executing SQL Query: " + e.getMessage());
-		}
-
-	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProductoXXOSI> leerProductosXXOSI()
+	public List<ProductoXXOSI> leerProductosXXOSI(String url, String schema, String username, String password)
 			throws PersistenceExceptionInventario {
 
 		// Default data source connection parameters.
 		List<ProductoXXOSI> listadoProductosNuevos = new ArrayList<ProductoXXOSI>();
-		Session session = HibernateUtil.getSessionFactoryXXOSI().openSession();
+		Session session = HibernateUtil.getSessionFactoryXXOSI(url,schema,username,password).openSession();
 
-		// FAIL 1: Usando Criteria
+		// Usando Criteria
 		/*
 		 * Criteria criteria = session.createCriteria(ProductoXXOSI.class);
 		 * List<ProductoXXOSI> listaProductosNuevos = criteria.list();
 		 */
 
-		// FAIL 2: Usando HQL
+		// Usando HQL
 		/*
 		 * Query query = session.createQuery("from ProductoXXOSI"); list =
 		 * query.list();
 		 *///
 
-		// FAIL 3: Usando SQL simp
+		// Usando SQL
 
-//		listadoProductosNuevos = (List<ProductoXXOSI>) session.createQuery(
-				//"select v from ProductoXXOSI v").setMaxResults(10).list();
 		try {
 		
-		List<ProductoXXOSI> result= session.createSQLQuery("SELECT ITEM_NUMBER as itemId, ITEM_DESCRIPTION as itemDescription, BAR_CODE as alternativeItemId1 FROM APPS.XXOSI_EBS_BOPOS_ITEMS")
+		List<ProductoXXOSI> result= session.createSQLQuery("SELECT ITEM_NUMBER as itemId, ITEM_DESCRIPTION as itemDescription, BAR_CODE as alternativeItemId1 FROM \"APPS.XXOSI_EBS_BOPOS_ITEMS\"")
 				.addScalar("itemId",StandardBasicTypes.STRING  )
 				.addScalar("itemDescription",StandardBasicTypes.STRING  )
 				.addScalar("alternativeItemId1",StandardBasicTypes.STRING  )

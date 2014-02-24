@@ -12,19 +12,13 @@ import com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI;
 
 public class CargaInicialMaestroDeProductosService implements
 		ICargaInicialMaestroDeProductosService {
-/*
+
 	@Override
-	public void generarExtraccionMaestroDeProductos() throws PersistenceExceptionInventario {
-		ICargaInicialMaestroDeProductosDAO cargaInicialMaestroDeProductosDAO = XXOSIFactoryDAO.getInstance().getCargaInicialMaestroDeProductosDAO();
-		cargaInicialMaestroDeProductosDAO.generarExtraccionDesdeVistaXXOSI();
-	}
-	*/
-	@Override
-	public List<ProductoXXOSI>  generarExtraccionMaestroDeProductos() throws PersistenceExceptionInventario {
+	public List<ProductoXXOSI>  generarExtraccionMaestroDeProductos(String url, String schema, String username, String password) throws PersistenceExceptionInventario {
 		ICargaInicialMaestroDeProductosDAO cargaInicialMaestroDeProductosDAO = XXOSIFactoryDAO.getInstance().getCargaInicialMaestroDeProductosDAO();
 		List<ProductoXXOSI> listadoProductosNuevos = new ArrayList<ProductoXXOSI>();
 				
-		listadoProductosNuevos = cargaInicialMaestroDeProductosDAO.leerProductosXXOSI();
+		listadoProductosNuevos = cargaInicialMaestroDeProductosDAO.leerProductosXXOSI(url, schema, username, password);
 		
 		//cargaInicialMaestroDeProductosDAO.crearProductos(listadoProductosNuevos);
 				

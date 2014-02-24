@@ -8,9 +8,7 @@ import com.rhiscom.persistence.inventario.entity.xxosi.ProductoXXOSI;
 
 public interface ICargaInicialMaestroDeProductosDAO {
 
-	void generarExtraccionDesdeVistaXXOSI() throws PersistenceExceptionInventario;	
-
-	List<ProductoXXOSI> leerProductosXXOSI() throws PersistenceExceptionInventario;
+	List<ProductoXXOSI> leerProductosXXOSI(String url, String schema, String username, String password) throws PersistenceExceptionInventario;
 	
 	void crearProductos(List<ProductoXXOSI> listadoProductos) throws PersistenceExceptionInventario;
 	
